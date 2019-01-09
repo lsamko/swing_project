@@ -3,28 +3,50 @@ package Swing;
 import javax.swing.*;
 import java.awt.*;
 
-public class project {
+public class project extends JFrame {
+    JLabel label;
+    JRadioButton option[] = new JRadioButton[4];
+    JButton b1, b2;
+    ButtonGroup bg;
+    int count = 0, current = 0, x = 1, y = 1, now = 0;
+    int m[] = new int[10];
+
+    project() {
+        label = new JLabel();
+        label.setText("Que 1 : Which one among these is not a datatype");
+        add(label);
+
+        bg = new ButtonGroup();
+        for (int i = 0; i < 4; i++) {
+            option[i] = new JRadioButton();
+            add(option[i]);
+            bg.add(option[i]);
+        }
+        b1 = new JButton("Next");
+
+        add(b1);
+        label.setBounds(30, 40, 450, 20);
+        option[0].setBounds(50, 80, 100, 20);
+        option[0].setText("int");
+        option[1].setText("Float");
+        option[2].setText("boolean");
+        option[3].setText("char");
+
+        option[1].setBounds(50, 110, 100, 20);
+        option[2].setBounds(50, 140, 100, 20);
+        option[3].setBounds(50, 170, 100, 20);
+
+        b1.setBounds(100, 240, 100, 30);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        setLocation(250, 100);
+        setVisible(true);
+        setSize(600, 350);
+    }
+
     public static void main(String[] args) {
-        JFrame jFrame = new JFrame();
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setSize(500, 500);
-        JTextField textField = new JTextField("Que 1 :");
-        JRadioButton intButton = new JRadioButton("int");
-        JRadioButton floatButton = new JRadioButton("Float");
-        JRadioButton booleanButton = new JRadioButton("boolean");
-        JRadioButton charButton = new JRadioButton("char");
-        jFrame.getContentPane().add(BorderLayout.PAGE_START,textField);
-        jFrame.getContentPane().add(BorderLayout.LINE_START, intButton);
-        jFrame.getContentPane().add(BorderLayout.BEFORE_FIRST_LINE, floatButton);
-        jFrame.getContentPane().add(BorderLayout.BEFORE_LINE_BEGINS,booleanButton);
-        jFrame.getContentPane().add(BorderLayout.LINE_END,charButton);
-
-
-        JButton button = new JButton("Next");
-        jFrame.getContentPane().add(BorderLayout.PAGE_END, button);
-        jFrame.setVisible(true);
-
-        JTextArea ta = new JTextArea();
-
+        new project();
     }
 }
+
