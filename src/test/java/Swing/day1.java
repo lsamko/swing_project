@@ -1,17 +1,16 @@
 package Swing;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class project extends JFrame {
+public class day1 extends JFrame {
     JLabel label;
-    JRadioButton option[] = new JRadioButton[4];
+    JRadioButton option[] = new JRadioButton[5];
     JButton b1, b2;
     ButtonGroup bg;
     int count = 0, current = 0, x = 1, y = 1, now = 0;
     int m[] = new int[10];
 
-    project() {
+    day1() {
         label = new JLabel();
         label.setText("Que 1 : Which one among these is not a datatype");
         add(label);
@@ -46,7 +45,7 @@ public class project extends JFrame {
     }
 
     public static void main(String[] args) {
-        new project();
+        new day1();
     }
 }
 
